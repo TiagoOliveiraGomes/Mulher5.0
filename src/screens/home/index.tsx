@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Header } from "../../components/header"
 
@@ -7,7 +7,6 @@ const Home = () => {
         <View style={style.container}>
             <Header />
             <Text style={style.text}>Home</Text>
-
         </View>
     )
 }
