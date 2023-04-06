@@ -1,7 +1,7 @@
 import { Image, StyleSheet, TouchableOpacity, TextInput, View } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Shadow } from 'react-native-shadow-2'
-import { width } from "../../util/dimensions"
+import { height, width } from "../../util/dimensions"
 import { IconButton } from "../iconButton"
 import { CrownSimple, MagnifyingGlass } from "phosphor-react-native"
 
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.gray,
         width: width,
+        height: height/6,
         flexDirection: "row",
         paddingTop: 50,
         paddingHorizontal: 30,
