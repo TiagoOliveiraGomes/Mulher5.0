@@ -1,29 +1,25 @@
-import { Image, StyleSheet, TouchableOpacity, TextInput, View } from "react-native"
+import { Image, StyleSheet, TouchableOpacity, TextInput, View, Text } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Shadow } from 'react-native-shadow-2'
 import { height, width } from "../../util/dimensions"
 import { IconButton } from "../iconButton"
-import { CrownSimple, MagnifyingGlass } from "phosphor-react-native"
+import { CrownSimple, MagnifyingGlass, Table, WhatsappLogo } from "phosphor-react-native"
 
-export const Header = () => {
+export const Footer = () => {
     const img = require('../../assets/imgs/image2.png')
     const img2 = require('../../assets/imgs/text.png')
     return (
             <Shadow distance={4} offset={[0,4]}>
                 <View style={styles.container}>
-                    <Image style={styles.logo} source={img} />
-                    <Image style={styles.Title} source={img2} />
-                    <IconButton text="Admin">
-                        <CrownSimple color={colors.lilac} weight="duotone" size={32} />
-                    </IconButton>
-                    <View style={styles.inputContainer}>
-                        <Shadow distance={4} offset={[0,4]}>
-                            <TextInput style={styles.input} placeholder="Nome da corredora..." />
-                        </Shadow>
-                        <TouchableOpacity style={styles.searchIcon}>
-                            <MagnifyingGlass size={28} color={colors.lilac}/>
-                        </TouchableOpacity>
+                    <View style={styles.containerButtons}>
+                        <IconButton text="Admin">
+                            <Table color={colors.lilac} weight="duotone" size={32} />
+                        </IconButton>
+                        <IconButton text="Tabela">
+                            <WhatsappLogo color={colors.lilac} weight="duotone" size={32} />
+                        </IconButton>
                     </View>
+                    <Text style={styles.text}>By Tiago de Oliveira Gomes</Text>
                 </View>
             </Shadow>
     )
@@ -34,15 +30,19 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray,
         width: width,
         height: height/6,
-        flexDirection: "row",
-        paddingTop: 50,
-        paddingHorizontal: 30,
-        paddingBottom: 40,
-        justifyContent: "space-between",
-        alignItems: "flex-end",
-        borderBottomStartRadius: 33,
+        paddingHorizontal: "20%",
+        paddingTop: 40,
+        paddingBottom: 10,
+        borderTopRightRadius: 33,
         shadowOpacity: 50,
         zIndex:1,
+        justifyContent: "space-between"
+        // gap: 20,
+    },
+    containerButtons: {
+        width: "100%",
+        flexDirection: "row",
+        justifyContent: "space-between",
     },
     logo: {
         width: 62,
@@ -73,5 +73,10 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: "18%",
         right: "18%"
+    },
+    text: {
+        fontSize: 12,
+        color: "#909090",
+        fontWeight: "bold",
     }
 })

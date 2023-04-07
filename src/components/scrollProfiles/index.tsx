@@ -24,6 +24,11 @@ export const ScrollProfile = () => {
         { id: "13", name: "Cruz Ramirez" },
         { id: "14", name: "Cruz Ramirez" },
         { id: "15", name: "Cruz Ramirez" },
+        { id: "16", name: "Cruz Ramirez" },
+        { id: "17", name: "Cruz Ramirez" },
+        { id: "18", name: "Cruz Ramirez" },
+        { id: "19", name: "Cruz Ramirez" },
+        { id: "20", name: "Cruz Ramirez" },
     ]
     )
     return(
@@ -36,7 +41,7 @@ export const ScrollProfile = () => {
         numColumns={3}
         renderItem={({ item }) => {
             return (
-              <ProfileButton />
+              <ProfileButton idImg={+item.id} />
             );
           }}
         />

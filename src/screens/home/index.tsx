@@ -2,13 +2,14 @@ import { StyleSheet, Text, View } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Header } from "../../components/header"
 import { ScrollProfile } from "../../components/scrollProfiles"
+import { Footer } from "../../components/footer"
 
 const Home = () => {
     return (
         <View style={style.container}>
             <Header />
             <ScrollProfile />
-            <Text style={style.text}>Home</Text>
+            <Footer />
         </View>
     )
 }
