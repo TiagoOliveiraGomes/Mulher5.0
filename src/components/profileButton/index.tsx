@@ -1,27 +1,25 @@
 import { Text, View, StyleSheet } from 'react-native'
 import { colors } from '../../util/theme/colors'
-import { Shadow } from 'react-native-shadow-2'
 import { TouchableOpacity } from 'react-native'
 import { Image } from 'react-native'
 
-export const ProfileButton = ({idImg}:{idImg:number}) => {
+export const ProfileButton = ({idImg, name}:{idImg:number, name: string}) => {
     const imgUrl = `https://i.pravatar.cc/300?img=${idImg}`
     return (
-        <TouchableOpacity>
-            <View style={styles.container}>
-            <Image
-        style={styles.tinyLogo}
-        source={{
-          uri: imgUrl,
-        }}
-      />
+        <TouchableOpacity style={styles.container}>
+            <View style={styles.profile}>
+                <Image style={styles.tinyLogo} source={{uri: imgUrl,}} />
             </View>
+                <Text style={styles.text}>{name}</Text>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: "center"
+    },
+    profile: {
         backgroundColor: "green",
         width: 100,
         height: 100,
@@ -36,4 +34,10 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
       },
+      text: {
+        fontSize: 15,
+        fontWeight: "bold",
+        color: "#232323",
+        marginTop: 5
+      }
 })

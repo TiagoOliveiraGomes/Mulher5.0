@@ -8,8 +8,8 @@ type dataType = {id:string, name: string}[]
 
 export const ScrollProfile = () => {
     const [data, setData] = useState<dataType>([
-        { id: "00", name: "Relâmpago McQueen" },
-        { id: "01", name: "Agente Tom Mate" },
+        { id: "00", name: "Relâmpago" },
+        { id: "01", name: "Agente Tom" },
         { id: "02", name: "Doc Hudson" },
         { id: "03", name: "Cruz Ramirez" },
         { id: "04", name: "Cruz Ramirez" },
@@ -41,7 +41,7 @@ export const ScrollProfile = () => {
         numColumns={3}
         renderItem={({ item }) => {
             return (
-              <ProfileButton idImg={+item.id} />
+              <ProfileButton name={item.name} idImg={+item.id} />
             );
           }}
         />
