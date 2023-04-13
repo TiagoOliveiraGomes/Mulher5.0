@@ -1,9 +1,9 @@
-import { Image, StyleSheet, TouchableOpacity, TextInput, View, Text } from "react-native"
+import { StyleSheet, View, Text } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Shadow } from 'react-native-shadow-2'
 import { height, width } from "../../util/dimensions"
 import { IconButton } from "../iconButton"
-import { CrownSimple, MagnifyingGlass, Table, WhatsappLogo } from "phosphor-react-native"
+import { Table, WhatsappLogo } from "phosphor-react-native"
 
 export const Footer = () => {
     const img = require('../../assets/imgs/image2.png')
@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 50,
         zIndex:1,
         justifyContent: "space-between"
-        // gap: 20,
     },
     containerButtons: {
         width: "100%",
