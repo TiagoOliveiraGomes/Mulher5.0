@@ -3,32 +3,32 @@ import { width } from "../../util/dimensions"
 import { useState } from "react"
 import { ProfileButton } from "../profileButton"
 
-type dataType = {id:string, name: string}[]
+type dataType = {id:string, name: string, checked:boolean}[]
 
 
 export const ScrollProfile = () => {
     const [data, setData] = useState<dataType>([
-        { id: "00", name: "Relâmpago" },
-        { id: "01", name: "Agente Tom" },
-        { id: "02", name: "Doc Hudson" },
-        { id: "03", name: "Cruz Ramirez" },
-        { id: "04", name: "Cruz Ramirez" },
-        { id: "05", name: "Cruz Ramirez" },
-        { id: "06", name: "Cruz Ramirez" },
-        { id: "07", name: "Cruz Ramirez" },
-        { id: "08", name: "Cruz Ramirez" },
-        { id: "09", name: "Cruz Ramirez" },
-        { id: "10", name: "Cruz Ramirez" },
-        { id: "11", name: "Cruz Ramirez" },
-        { id: "12", name: "Cruz Ramirez" },
-        { id: "13", name: "Cruz Ramirez" },
-        { id: "14", name: "Cruz Ramirez" },
-        { id: "15", name: "Cruz Ramirez" },
-        { id: "16", name: "Cruz Ramirez" },
-        { id: "17", name: "Cruz Ramirez" },
-        { id: "18", name: "Cruz Ramirez" },
-        { id: "19", name: "Cruz Ramirez" },
-        { id: "20", name: "Cruz Ramirez" },
+        { id: "00", name: "Relâmpago", checked: true },
+        { id: "01", name: "Agente Tom", checked: false },
+        { id: "02", name: "Doc Hudson", checked: false },
+        { id: "03", name: "Cruz Ramirez", checked: false },
+        { id: "04", name: "Cruz Ramirez", checked: false },
+        { id: "05", name: "Cruz Ramirez", checked: false },
+        { id: "06", name: "Cruz Ramirez", checked: true },
+        { id: "07", name: "Cruz Ramirez", checked: false },
+        { id: "08", name: "Cruz Ramirez", checked: false },
+        { id: "09", name: "Cruz Ramirez", checked: false },
+        { id: "10", name: "Cruz Ramirez", checked: false },
+        { id: "11", name: "Cruz Ramirez", checked: true },
+        { id: "12", name: "Cruz Ramirez", checked: false },
+        { id: "13", name: "Cruz Ramirez", checked: false },
+        { id: "14", name: "Cruz Ramirez", checked: false },
+        { id: "15", name: "Cruz Ramirez", checked: false },
+        { id: "16", name: "Cruz Ramirez", checked: false },
+        { id: "17", name: "Cruz Ramirez", checked: false },
+        { id: "18", name: "Cruz Ramirez", checked: false },
+        { id: "19", name: "Cruz Ramirez", checked: false },
+        { id: "20", name: "Cruz Ramirez", checked: true },
     ]
     )
     return(
@@ -41,7 +41,7 @@ export const ScrollProfile = () => {
         numColumns={3}
         renderItem={({ item }) => {
             return (
-              <ProfileButton name={item.name} idImg={+item.id} />
+              <ProfileButton checked={item.checked} name={item.name} idImg={+item.id} />
             );
           }}
         />
