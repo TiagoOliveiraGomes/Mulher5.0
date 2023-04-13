@@ -12,10 +12,10 @@ export const Footer = () => {
             <Shadow distance={4} offset={[0,4]}>
                 <View style={styles.container}>
                     <View style={styles.containerButtons}>
-                        <IconButton text="Admin">
+                        <IconButton text="Tabela">
                             <Table color={colors.lilac} weight="duotone" size={32} />
                         </IconButton>
-                        <IconButton text="Tabela">
+                        <IconButton text="Whatsapp">
                             <WhatsappLogo color={colors.lilac} weight="duotone" size={32} />
                         </IconButton>
                     </View>
@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.gray,
         width: width,
-        height: height/6,
+        height: height/7,
         paddingHorizontal: "20%",
-        paddingTop: 40,
+        paddingTop: 22,
         paddingBottom: 10,
         borderTopRightRadius: 33,
         shadowOpacity: 50,
@@ -43,36 +43,6 @@ const styles = StyleSheet.create({
         width: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
-    },
-    logo: {
-        width: 62,
-        height: 40,
-    },
-    Title: {
-        width: 121,
-        height: 24,
-    },
-    inputContainer: {
-        width: width,
-        position: "absolute",
-        top:"210%",
-        alignItems: "center",
-        zIndex:1,
-    },
-    input: {
-        width:300,
-        height: 42,
-        borderRadius: 29,
-        borderWidth: 2,
-        borderColor: colors.lilac,
-        backgroundColor: colors.light_purple,
-        paddingHorizontal: 22,
-        zIndex:1,
-    },
-    searchIcon: {
-        position: "absolute",
-        top: "18%",
-        right: "18%"
     },
     text: {
         fontSize: 12,
