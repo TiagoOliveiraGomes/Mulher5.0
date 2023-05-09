@@ -4,10 +4,18 @@ import { Shadow } from 'react-native-shadow-2'
 import { height, width } from "../../util/dimensions"
 import { IconButton } from "../iconButton"
 import { CrownSimple, MagnifyingGlass } from "phosphor-react-native"
+import { useState } from "react"
 
-export const Header = () => {
+interface HeaderProps {
+    runnerNameInput: string,
+    setRunnerNameInput: React.Dispatch<React.SetStateAction<string>>
+}
+export const Header = (props:HeaderProps) => {
+    const {runnerNameInput, setRunnerNameInput} = props
     const img = require('../../assets/imgs/image2.png')
     const img2 = require('../../assets/imgs/text.png')
+    
+    
     return (
             <Shadow distance={4} offset={[0,4]}>
                 <View style={styles.container}>
@@ -18,7 +26,7 @@ export const Header = () => {
                     </IconButton>
                     <View style={styles.inputContainer}>
                         <Shadow distance={4} offset={[0,4]}>
-                            <TextInput style={styles.input} placeholder="Nome da corredora..." />
+                            <TextInput value={runnerNameInput} onChangeText={text => setRunnerNameInput(text)} style={styles.input} placeholder="Nome da corredora..." />
                         </Shadow>
                         <TouchableOpacity style={styles.searchIcon}>
                             <MagnifyingGlass size={28} color={colors.lilac}/>

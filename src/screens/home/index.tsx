@@ -3,12 +3,15 @@ import { colors } from "../../util/theme/colors"
 import { Header } from "../../components/header"
 import { ScrollProfile } from "../../components/scrollProfiles"
 import { Footer } from "../../components/footer"
+import { useState } from "react"
 
 const Home = () => {
+    const [runnerNameInput, setRunnerNameInput] = useState<string>("")
+
     return (
         <View style={style.container}>
-            <Header />
-            <ScrollProfile />
+            <Header runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} />
+            <ScrollProfile runnerNameInput={runnerNameInput} />
             <Footer />
         </View>
     )
