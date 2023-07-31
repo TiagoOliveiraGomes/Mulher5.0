@@ -1,14 +1,14 @@
-import { TouchableOpacity, Text} from 'react-native'
+import { TouchableOpacity, TouchableOpacityProps, Text} from 'react-native'
 
-interface IconButtonProps  {
+interface IconButtonProps extends TouchableOpacityProps {
     children: JSX.Element,
-    text: string
+    text: string,
 }
-export const IconButton = (props: IconButtonProps) => {
+export const IconButton = ({children, text, ...props}: IconButtonProps) => {
     return (
-        <TouchableOpacity style={{alignItems:"center"}}>
-            {props.children}
-            <Text>{props.text}</Text>
+        <TouchableOpacity {...props} style={{alignItems:"center"}}>
+            {children}
+            <Text>{text}</Text>
         </TouchableOpacity>
     )
 }

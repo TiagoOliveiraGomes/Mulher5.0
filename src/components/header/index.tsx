@@ -15,7 +15,6 @@ export const Header = (props:HeaderProps) => {
     const img = require('../../assets/imgs/image2.png')
     const img2 = require('../../assets/imgs/text.png')
     
-    
     return (
             <Shadow distance={4} offset={[0,4]}>
                 <View style={styles.container}>

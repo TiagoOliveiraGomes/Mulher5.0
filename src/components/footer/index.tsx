@@ -1,3 +1,4 @@
+import { NativeStackNavigationProp} from '@react-navigation/native-stack'
 import { StyleSheet, View, Text } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Shadow } from 'react-native-shadow-2'
@@ -5,17 +6,20 @@ import { height, width } from "../../util/dimensions"
 import { IconButton } from "../iconButton"
 import { Table, WhatsappLogo } from "phosphor-react-native"
 
-export const Footer = () => {
+
+export const Footer = (props) => {
+    const navigation = props.navigation
     const img = require('../../assets/imgs/image2.png')
     const img2 = require('../../assets/imgs/text.png')
     return (
             <Shadow distance={4} offset={[0,4]}>
                 <View style={styles.container}>
                     <View style={styles.containerButtons}>
-                        <IconButton text="Tabela">
+                        {/* TODO: create the table page function "OnPress" */}
+                        <IconButton text="Tabela" onPress={()=>navigation.navigate('Schedule')}>
                             <Table color={colors.lilac} weight="duotone" size={32} />
                         </IconButton>
-                        <IconButton text="Whatsapp">
+                        <IconButton text="Whatsapp" onPress={() => navigation.navigate('Schedule')}>
                             <WhatsappLogo color={colors.lilac} weight="duotone" size={32} />
                         </IconButton>
                     </View>

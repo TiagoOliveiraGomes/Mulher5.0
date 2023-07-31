@@ -5,14 +5,16 @@ import { ScrollProfile } from "../../components/scrollProfiles"
 import { Footer } from "../../components/footer"
 import { useState } from "react"
 
-const Home = () => {
+const Home = (props) => {
+    const navigation = props.navigation
+    console.log(props)
     const [runnerNameInput, setRunnerNameInput] = useState<string>("")
 
     return (
         <View style={style.container}>
             <Header runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} />
             <ScrollProfile runnerNameInput={runnerNameInput} />
-            <Footer />
+            <Footer navigation={navigation} />
         </View>
     )
 }
@@ -29,4 +31,4 @@ const style = StyleSheet.create({
         color:"black"
     }
 })
-export default Home
+export {Home}
