@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, View } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Header } from "../../components/header"
 import { ScrollProfile } from "../../components/scrollProfiles"
@@ -12,7 +12,7 @@ const Home = (props) => {
 
     return (
         <View style={style.container}>
-            <Header runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} />
+            <Header IsMainScreen={true} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} />
             <ScrollProfile runnerNameInput={runnerNameInput} />
             <Footer navigation={navigation} />
         </View>
