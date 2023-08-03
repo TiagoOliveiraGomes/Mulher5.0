@@ -4,6 +4,7 @@ import { Header } from "../../components/header"
 import { ScrollProfile } from "../../components/scrollProfiles"
 import { Footer } from "../../components/footer"
 import { useState } from "react"
+import { RunnersTable } from "../../components/runnersTable"
 
 const Schedule = (props) => {
     const navigation = props.navigation
@@ -13,9 +14,7 @@ const Schedule = (props) => {
     return (
         <View style={style.container}>
             <Header navigation={navigation} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} IsMainScreen={false} />
-            <View>
-              <Text>Testando</Text>
-            </View>
+            <RunnersTable />
             <Footer navigation={navigation} />
         </View>
     )
