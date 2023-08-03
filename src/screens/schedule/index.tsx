@@ -12,7 +12,7 @@ const Schedule = (props) => {
 
     return (
         <View style={style.container}>
-            <Header runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} IsMainScreen={false} />
+            <Header navigation={navigation} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} IsMainScreen={false} />
             <View>
               <Text>Testando</Text>
             </View>

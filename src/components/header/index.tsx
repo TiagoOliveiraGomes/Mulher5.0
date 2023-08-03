@@ -3,24 +3,26 @@ import { colors } from "../../util/theme/colors"
 import { Shadow } from 'react-native-shadow-2'
 import { height, width } from "../../util/dimensions"
 import { IconButton } from "../iconButton"
-import { CrownSimple, MagnifyingGlass } from "phosphor-react-native"
+import { CrownSimple } from "phosphor-react-native"
 import { useState } from "react"
 import { SearchBar } from "../searchBar"
+import { GoBackButton } from "../gobackButton"
 
 interface HeaderProps {
     runnerNameInput: string,
     setRunnerNameInput: React.Dispatch<React.SetStateAction<string>>,
-    IsMainScreen: boolean
+    IsMainScreen: boolean,
+    navigation
 }
 export const Header = (props:HeaderProps) => {
-    const {runnerNameInput, setRunnerNameInput, IsMainScreen} = props
+    const {runnerNameInput, setRunnerNameInput, IsMainScreen, navigation} = props
     const img = require('../../assets/imgs/image2.png')
     const img2 = require('../../assets/imgs/text.png')
     
     return (
             <Shadow distance={4} offset={[0,4]}>
                 <View style={styles.container}>
-                    <Image style={styles.logo} source={img} />
+                    {IsMainScreen?<Image style={styles.logo} source={img} />: <GoBackButton navigation={navigation} />}
                     <Image style={styles.Title} source={img2} />
                     <IconButton text="Admin">
                         <CrownSimple color={colors.lilac} weight="duotone" size={32} />

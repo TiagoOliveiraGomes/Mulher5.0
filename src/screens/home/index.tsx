@@ -7,12 +7,11 @@ import { useState } from "react"
 
 const Home = (props) => {
     const navigation = props.navigation
-    console.log(props)
     const [runnerNameInput, setRunnerNameInput] = useState<string>("")
 
     return (
         <View style={style.container}>
-            <Header IsMainScreen={true} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} />
+            <Header navigation={navigation} IsMainScreen={true} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} />
             <ScrollProfile runnerNameInput={runnerNameInput} />
             <Footer navigation={navigation} />
         </View>
