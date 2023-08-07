@@ -21,4 +21,4 @@ export const dataMock = [
     { id: "19", name: "Cruz Ramirez", checked: false, distanceByDay: [0] },
     { id: "20", name: "Cruz Ramirez", checked: true, distanceByDay: [0] },
   ] 
-export type runnerType = {id:string, name: string, checked:boolean}
+export type runnerType = {id:string, name: string, checked:boolean, distanceByDay: number[]}

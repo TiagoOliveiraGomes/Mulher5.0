@@ -1,16 +1,26 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colors } from '../../../util/theme/colors'
-import { height } from '../../../util/dimensions'
+import { runnerType } from '../../../mock/runners'
 
-export function TableLine(props) {
-    const color = props.item.id % 2 === 0 ? colors.light_purple : colors.lilac
-    const textColor = props.item.id % 2 === 0 ? "black" : "white"
+interface TableLineProps {
+    textColor: boolean,
+    isFirst: boolean,
+    isLast: boolean,
+    color: boolean,
+    onClick?: () => void,
+    item: runnerType
+}
+export function TableLine(props: TableLineProps) {
+    const {isFirst, isLast, onClick} = props
+    const color = props.color ? colors.light_purple : colors.lilac
+    const textColor = props.textColor ? "black" : "white"
+
   return (
-    <View style={[
+    <TouchableOpacity onPress={onClick} style={[
         style.TableLineContainer,
-        props.isFirst && style.FirstTableLineContainer,
-        props.isLast && style.LastTableLineContainer,
+        isFirst && style.FirstTableLineContainer,
+        isLast && style.LastTableLineContainer,
         { backgroundColor: color }
     ]}>
         <View style={[{ width:"15%", borderRightWidth:2, }, style.collumnTable]}>
@@ -22,7 +32,7 @@ export function TableLine(props) {
         <View style={[{ width:"20%", height:"100%",}, style.collumnTable]}>
             <Text style={{color: textColor, fontWeight: "bold"}}>{props.item.distanceByDay[0]}</Text>
         </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

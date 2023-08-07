@@ -1,4 +1,4 @@
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { width } from "../../util/dimensions";
 import { dataMock } from "../../mock/runners";
@@ -12,9 +12,11 @@ export function RunnersTable() {
       data={dataMock}
       renderItem={({ item, index }) => (
         <TableLine
+            color={+item.id % 2 === 0}
             item={item}
             isFirst={index === 0}
             isLast={index === dataMock.length - 1}
+            textColor={+item.id % 2 === 0}
         />
     )}
       keyExtractor={(item) => item.id}
