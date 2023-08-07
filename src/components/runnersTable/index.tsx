@@ -10,7 +10,13 @@ export function RunnersTable() {
       <FlatList 
       style={{width:"100%"}}
       data={dataMock}
-      renderItem={TableLine}
+      renderItem={({ item, index }) => (
+        <TableLine
+            item={item}
+            isFirst={index === 0}
+            isLast={index === dataMock.length - 1}
+        />
+    )}
       keyExtractor={(item) => item.id}
       />
     </View>
