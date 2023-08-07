@@ -13,13 +13,13 @@ export function TableLine(props) {
         props.isLast && style.LastTableLineContainer,
         { backgroundColor: color }
     ]}>
-        <View style={{ width:"15%", borderRightWidth:2, paddingHorizontal:15, height: "100%", backgroundColor:"green", padding:0}}>
+        <View style={[{ width:"15%", borderRightWidth:2, }, style.collumnTable]}>
             <Text style={{color: textColor, fontWeight: "bold"}}>{props.item.id}</Text>
         </View>
-        <View style={{ width:"65%", borderRightWidth:2, paddingHorizontal:15}}>
+        <View style={[{ width:"65%", borderRightWidth:2,}, style.collumnTable]}>
             <Text style={{color: textColor, fontWeight: "bold"}}>{props.item.name}</Text>
         </View>
-        <View style={{ width:"20%", height:"100%", paddingHorizontal:15}}>
+        <View style={[{ width:"20%", height:"100%",}, style.collumnTable]}>
             <Text style={{color: textColor, fontWeight: "bold"}}>{props.item.distanceByDay[0]}</Text>
         </View>
     </View>
@@ -31,20 +31,25 @@ const style = StyleSheet.create({
         width: "100%",
         height: 40,
         flexDirection: "row",
-        borderBottomWidth: 3,
+        borderBottomWidth: 1,
         borderLeftWidth: 2,
         borderRightWidth: 2,
-        borderTopWidth:3,
-        justifyContent: "center",
-        alignItems: "stretch",
+        borderTopWidth:1,
+        alignItems: "center",
         margin: 0,
-        paddingVertical: 5
+        paddingVertical: 0
     },
     FirstTableLineContainer: {
         borderTopWidth: 2,
-        borderBottomWidth: 2,
+        borderBottomWidth: 1,
     },
     LastTableLineContainer: {
         borderBottomWidth: 2,
+    },
+    collumnTable: {
+        height: "100%", 
+        padding:0, 
+        justifyContent:"center",
+        paddingHorizontal:15,
     }
 });
