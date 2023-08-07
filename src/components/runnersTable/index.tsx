@@ -8,6 +8,7 @@ export function RunnersTable() {
   return (
     <View style={style.Container}>
       <FlatList 
+      style={{width:"100%"}}
       data={dataMock}
       renderItem={TableLine}
       keyExtractor={(item) => item.id}

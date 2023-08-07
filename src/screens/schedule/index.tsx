@@ -8,7 +8,6 @@ import { RunnersTable } from "../../components/runnersTable"
 
 const Schedule = (props) => {
     const navigation = props.navigation
-    console.log(props)
     const [runnerNameInput, setRunnerNameInput] = useState<string>("")
 
     return (
