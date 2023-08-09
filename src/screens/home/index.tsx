@@ -22,11 +22,10 @@ const Home = (props) => {
 const style = StyleSheet.create({
     container: {
         backgroundColor: colors.lilac ,
-        width: width,
-        height: height/1.05,
+        width: "100%",
+        height: "100%",
         alignItems: "center",
         justifyContent: "flex-start",
-        position: "relative",
     },
     text: {
         color:"black"

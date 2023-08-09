@@ -9,7 +9,8 @@ export function RunnersTable() {
   return (
     <View style={style.Container}>
       <FlatList 
-      style={{width:"100%", paddingTop: 20, paddingBottom: 20}}
+      style={{width:"100%",}}
+      contentContainerStyle={{ paddingVertical: 20,}}
       data={dataMock}
       renderItem={({ item, index }) => (
         <TableLine
@@ -34,7 +35,7 @@ const style = StyleSheet.create({
     alignItems: "center",
     paddingTop: height/6,
     paddingHorizontal: 20,
-    // paddingBottom: height/6,
+    paddingBottom: height/7,
     zIndex: -1,
   },
 });
