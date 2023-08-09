@@ -12,9 +12,10 @@ interface TableLineProps {
     item: runnerType
 }
 export function TableLine(props: TableLineProps) {
-    const {isFirst, isLast, onClick} = props
+    const {isFirst, isLast, onClick, item} = props
     const color = props.color ? colors.light_purple : colors.lilac
     const textColor = props.textColor ? "black" : "white"
+    const allDistance = item.distanceByDay.reduce((partialSum, a) => partialSum + a, 0);
 
   return (
     <TouchableOpacity onPress={onClick} style={[
@@ -24,13 +25,13 @@ export function TableLine(props: TableLineProps) {
         { backgroundColor: color }
     ]}>
         <View style={[{ width:"15%", borderRightWidth:2, }, style.collumnTable]}>
-            <Text style={{color: textColor, fontWeight: "bold"}}>{props.item.id}</Text>
+            <Text style={{color: textColor, fontWeight: "bold"}}>{item.id}</Text>
         </View>
         <View style={[{ width:"65%", borderRightWidth:2,}, style.collumnTable]}>
-            <Text style={{color: textColor, fontWeight: "bold"}}>{props.item.name}</Text>
+            <Text style={{color: textColor, fontWeight: "bold"}}>{item.name}</Text>
         </View>
         <View style={[{ width:"20%", height:"100%",}, style.collumnTable]}>
-            <Text style={{color: textColor, fontWeight: "bold"}}>{props.item.distanceByDay[0]}</Text>
+            <Text style={{color: textColor, fontWeight: "bold"}}>{allDistance}</Text>
         </View>
     </TouchableOpacity>
   )

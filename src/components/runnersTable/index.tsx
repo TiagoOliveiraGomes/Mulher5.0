@@ -1,4 +1,4 @@
-import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 import React from "react";
 import { width } from "../../util/dimensions";
 import { dataMock } from "../../mock/runners";

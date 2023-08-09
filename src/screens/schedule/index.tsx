@@ -3,7 +3,6 @@ import { colors } from "../../util/theme/colors"
 import { Header } from "../../components/header"
 import { useState } from "react"
 import { RunnersTable } from "../../components/runnersTable"
-import { } from '@react-navigation/native-stack'
 import { NavigationProp } from "@react-navigation/native"
 
 interface ScheduleProps {
