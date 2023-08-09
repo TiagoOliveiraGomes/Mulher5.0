@@ -4,6 +4,8 @@ import { Header } from "../../components/header"
 import { useState } from "react"
 import { RunnersTable } from "../../components/runnersTable"
 import { NavigationProp } from "@react-navigation/native"
+import { Footer } from "../../components/footer"
+import { height } from "../../util/dimensions"
 
 interface ScheduleProps {
     navigation: NavigationProp<any, any>
@@ -17,6 +19,7 @@ const Schedule = (props: ScheduleProps) => {
         <View style={style.container}>
             <Header navigation={navigation} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} IsMainScreen={false} />
             <RunnersTable />
+            <Footer navigation={navigation} />
         </View>
     )
 }

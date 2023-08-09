@@ -10,7 +10,7 @@ export function SearchBar({ runnerNameInput, setRunnerNameInput }) {
       <Shadow distance={4} offset={[0, 4]}>
         <TextInput
           value={runnerNameInput}
-          onChangeText={(text) => setRunnerNameInput(text)}
+          onChangeText={setRunnerNameInput}
           style={styles.input}
           placeholder="Nome da corredora..."
         />

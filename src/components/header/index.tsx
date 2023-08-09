@@ -7,12 +7,13 @@ import { CrownSimple } from "phosphor-react-native"
 import { useState } from "react"
 import { SearchBar } from "../searchBar"
 import { GoBackButton } from "../gobackButton"
+import { NavigationProp } from "@react-navigation/native"
 
 interface HeaderProps {
     runnerNameInput: string,
     setRunnerNameInput: React.Dispatch<React.SetStateAction<string>>,
     IsMainScreen: boolean,
-    navigation
+    navigation: NavigationProp<any, any>
 }
 export const Header = (props:HeaderProps) => {
     const {runnerNameInput, setRunnerNameInput, IsMainScreen, navigation} = props
@@ -35,6 +36,9 @@ export const Header = (props:HeaderProps) => {
 
 const styles = StyleSheet.create({
     container: {
+        position: "absolute",
+        top: 0,
+        right: -width/2,
         backgroundColor: colors.gray,
         width: width,
         height: height/6,

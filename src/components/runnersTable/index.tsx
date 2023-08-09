@@ -1,14 +1,15 @@
 import { View, FlatList, StyleSheet } from "react-native";
 import React from "react";
-import { width } from "../../util/dimensions";
+import { height, width } from "../../util/dimensions";
 import { dataMock } from "../../mock/runners";
 import { TableLine } from "./tableLine";
 
 export function RunnersTable() {
+  const value = height
   return (
     <View style={style.Container}>
       <FlatList 
-      style={{width:"100%"}}
+      style={{width:"100%", paddingTop: 20, paddingBottom: 20}}
       data={dataMock}
       renderItem={({ item, index }) => (
         <TableLine
@@ -28,9 +29,12 @@ export function RunnersTable() {
 const style = StyleSheet.create({
   Container: {
     width: width,
+    height: height/4,
     flexGrow: 1,
     alignItems: "center",
-    padding: 20,
-    marginBottom:150
+    paddingTop: height/6,
+    paddingHorizontal: 20,
+    // paddingBottom: height/6,
+    zIndex: -1,
   },
 });

@@ -32,6 +32,7 @@ export const Footer = (props:FooterProps) => {
 
 const styles = StyleSheet.create({
     container: {
+        position:"absolute", left: -width/2, bottom: 0,
         backgroundColor: colors.gray,
         width: width,
         height: height/7,
@@ -40,8 +41,8 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         borderTopRightRadius: 33,
         shadowOpacity: 50,
-        zIndex:1,
-        justifyContent: "space-between"
+        zIndex:100,
+        justifyContent: "space-between",
     },
     containerButtons: {
         width: "100%",

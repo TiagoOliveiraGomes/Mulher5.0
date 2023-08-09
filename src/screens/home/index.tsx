@@ -4,6 +4,7 @@ import { Header } from "../../components/header"
 import { ScrollProfile } from "../../components/scrollProfiles"
 import { Footer } from "../../components/footer"
 import { useState } from "react"
+import { height, width } from "../../util/dimensions"
 
 const Home = (props) => {
     const navigation = props.navigation
@@ -21,10 +22,11 @@ const Home = (props) => {
 const style = StyleSheet.create({
     container: {
         backgroundColor: colors.lilac ,
-        width: "100%",
-        height: "100%",
+        width: width,
+        height: height/1.05,
         alignItems: "center",
-        justifyContent: "flex-start"
+        justifyContent: "flex-start",
+        position: "relative",
     },
     text: {
         color:"black"
