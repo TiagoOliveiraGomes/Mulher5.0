@@ -1,12 +1,16 @@
-import { StyleSheet, View, Text } from "react-native"
+import { StyleSheet, View } from "react-native"
 import { colors } from "../../util/theme/colors"
 import { Header } from "../../components/header"
-import { ScrollProfile } from "../../components/scrollProfiles"
-import { Footer } from "../../components/footer"
 import { useState } from "react"
 import { RunnersTable } from "../../components/runnersTable"
+import { } from '@react-navigation/native-stack'
+import { NavigationProp } from "@react-navigation/native"
 
-const Schedule = (props) => {
+interface ScheduleProps {
+    navigation: NavigationProp<any, any>
+}
+
+const Schedule = (props: ScheduleProps) => {
     const navigation = props.navigation
     const [runnerNameInput, setRunnerNameInput] = useState<string>("")
 
