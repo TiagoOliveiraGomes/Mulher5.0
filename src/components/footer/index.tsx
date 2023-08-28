@@ -5,8 +5,9 @@ import { height, width } from "../../util/dimensions"
 import { IconButton } from "../iconButton"
 import { Table, WhatsappLogo } from "phosphor-react-native"
 import { NavigationProp } from '@react-navigation/native'
+import { MainFooter } from "./mainFooter"
 
-interface FooterProps {
+export interface FooterProps {
     navigation: NavigationProp<any, any>
 }
 
@@ -16,14 +17,7 @@ export const Footer = (props:FooterProps) => {
     return (
             <Shadow distance={4} offset={[0,4]}>
                 <View style={styles.container}>
-                    <View style={styles.containerButtons}>
-                        <IconButton text="Tabela" onPress={()=>navigation.navigate('Schedule')}>
-                            <Table color={colors.lilac} weight="duotone" size={32} />
-                        </IconButton>
-                        <IconButton text="Whatsapp" onPress={() => navigation.navigate('Schedule')}>
-                            <WhatsappLogo color={colors.lilac} weight="duotone" size={32} />
-                        </IconButton>
-                    </View>
+                    <MainFooter navigation={navigation} />
                     <Text style={styles.text}>By Tiago de Oliveira Gomes</Text>
                 </View>
             </Shadow>
@@ -44,11 +38,7 @@ const styles = StyleSheet.create({
         zIndex:100,
         justifyContent: "space-between",
     },
-    containerButtons: {
-        width: "100%",
-        flexDirection: "row",
-        justifyContent: "space-between",
-    },
+    
     text: {
         fontSize: 12,
         color: "#909090",
