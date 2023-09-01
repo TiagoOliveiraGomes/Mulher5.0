@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { CaretCircleDoubleRight} from 'phosphor-react-native'
 
 export function TableDistanceByDay() {
   const [yesterday, setYesterday] = useState<string>("0")
@@ -20,11 +21,17 @@ export function TableDistanceByDay() {
         <Text>Hoje</Text>
         <Text>Total</Text>
       </View>
-      <View>
-        <View style={styles.ContainerNumberSpace}>
-          <TextInput onPressIn={()=> 0} keyboardType='numeric' value={yesterday} onChangeText={handleChangeYesterdayText} style={styles.NumberSpace} />
-          <TextInput editable={false} style={styles.NumberSpace}>{allDays}</TextInput>
+      <View style={{flexDirection: "row", width: "100%", justifyContent: "center"}}>
+        <View style={{flexDirection:"row", justifyContent: "center"}}>
+          <View style={styles.ContainerNumberSpace}>
+            <TextInput onPressIn={()=> 0} keyboardType='numeric' value={yesterday} onChangeText={handleChangeYesterdayText} style={styles.NumberSpace} />
+            <TextInput editable={false} style={styles.NumberSpace}>{allDays}</TextInput>
+          </View>
         </View>
+          <TouchableOpacity style={styles.SendButton}>
+            <CaretCircleDoubleRight size={30}/>
+            <Text>Enviar</Text>
+          </TouchableOpacity>
       </View>
     </View>
   )
@@ -44,7 +51,7 @@ const styles = StyleSheet.create({
   ContainerNumberSpace: {
     flexDirection: "row",
     borderWidth: 2,
-    borderRightWidth:0
+    borderRightWidth:0,
   },
   NumberSpace: {
     width: 50,
@@ -55,5 +62,12 @@ const styles = StyleSheet.create({
   ContainerTableHelper: {
     flexDirection: "row",
     gap: 20
+  },
+  SendButton: {
+    alignItems: "center",
+    alignSelf: "flex-end",
+    marginLeft: 40,
+    position: "absolute",
+    right: 0
   }
 })
