@@ -8,21 +8,20 @@ export function RunnersTable() {
   const value = height
   return (
     <View style={style.Container}>
-      <FlatList 
-      style={{width:"100%",}}
-      contentContainerStyle={{ paddingVertical: 20,}}
-      data={dataMock}
-      renderItem={({ item, index }) => (
-        <TableLine
-            color={+item.id % 2 === 0}
-            item={item}
-            isFirst={index === 0}
-            isLast={index === dataMock.length - 1}
-            textColor={+item.id % 2 === 0}
+        <FlatList
+        data={dataMock}
+        fadingEdgeLength={50}
+        renderItem={({ item, index }) => (
+          <TableLine
+              color={+item.id % 2 === 0}
+              item={item}
+              isFirst={index === 0}
+              isLast={index === dataMock.length - 1}
+              textColor={+item.id % 2 === 0}
+          />
+      )}
+        keyExtractor={(item) => item.id}
         />
-    )}
-      keyExtractor={(item) => item.id}
-      />
     </View>
   );
 }
