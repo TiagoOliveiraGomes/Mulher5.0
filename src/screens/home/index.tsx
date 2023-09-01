@@ -14,7 +14,7 @@ const Home = (props) => {
         <View style={style.container}>
             <Header navigation={navigation} IsMainScreen={true} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} />
             <ScrollProfile runnerNameInput={runnerNameInput} />
-            <Footer navigation={navigation} />
+            <Footer type={"main"} navigation={navigation} />
         </View>
     )
 }

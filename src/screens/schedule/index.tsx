@@ -19,7 +19,7 @@ const Schedule = (props: ScheduleProps) => {
         <View style={style.container}>
             <Header navigation={navigation} runnerNameInput={runnerNameInput} setRunnerNameInput={setRunnerNameInput} IsMainScreen={false} />
             <RunnersTable />
-            <Footer navigation={navigation} />
+            <Footer type="schedule" navigation={navigation} />
         </View>
     )
 }

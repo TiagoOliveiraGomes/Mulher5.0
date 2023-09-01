@@ -3,9 +3,13 @@ import React from "react";
 import { colors } from "../../../util/theme/colors";
 import { IconButton } from "../../iconButton";
 import { Table, WhatsappLogo } from "phosphor-react-native";
-import { FooterProps } from "..";
+import { NavigationProp } from '@react-navigation/native'
 
-export function MainFooter(props: FooterProps) {
+interface MainFooterProps {
+    navigation: NavigationProp<any, any>
+}
+
+export function MainFooter(props: MainFooterProps) {
     const { navigation } = props
   return (
     <View style={styles.containerButtons}>
@@ -14,7 +18,7 @@ export function MainFooter(props: FooterProps) {
       </IconButton>
       <IconButton
         text="Whatsapp"
-        onPress={() => navigation.navigate("Schedule")}
+        onPress={() => navigation.setParams({screen: "table"})}
       >
         <WhatsappLogo color={colors.lilac} weight="duotone" size={32} />
       </IconButton>
